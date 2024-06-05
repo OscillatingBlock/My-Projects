@@ -1,1 +1,1 @@
-# My-Cs50-Projects
+# My-Projects
