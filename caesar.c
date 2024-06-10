@@ -7,66 +7,55 @@
 bool only_digit(string s);
 char rotate(char c, int n);
 
-int main(int argc, string argv[])
-{
+int main(int argc, string argv[]) {
 
-    // Make sure program was run with just one command-line argument
-    if (argc != 2)
-    {
-        printf("Usage: ./caesar key\n");
-        return 1;
-    }
+  // Make sure program was run with just one command-line argument
+  if (argc != 2) {
+    printf("Usage: ./caesar key\n");
+    return 1;
+  }
 
-    // Make sure every character in argv[1] is a digit
-    if (!only_digit(argv[1]))
-    {
-        printf("Usage: ./caesar key\n");
-        return 1;
-    }
+  // Make sure every character in argv[1] is a digit
+  if (!only_digit(argv[1])) {
+    printf("Usage: ./caesar key\n");
+    return 1;
+  }
 
-    // Convert argv[1] from a string to an int
-    int key = atoi(argv[1]);
+  // Convert argv[1] from a string to an int
+  int key = atoi(argv[1]);
 
-    // Get plaintext
-    string plaintext = get_string("Plaintext: ");
+  // Get plaintext
+  string plaintext = get_string("Plaintext: ");
 
-    // Loop through each character in the plaintext and rotate
-    for (int i = 0; i < strlen(plaintext); i++)
-    {
-        plaintext[i] = rotate(plaintext[i], key); // Modify the character in the string
-    }
+  // Loop through each character in the plaintext and rotate
+  for (int i = 0; i < strlen(plaintext); i++) {
+    plaintext[i] =
+        rotate(plaintext[i], key); // Modify the character in the string
+  }
 
-    // Print the ciphertext
-    printf("ciphertext: %s\n", plaintext);
+  // Print the ciphertext
+  printf("ciphertext: %s\n", plaintext);
 
-    return 0;
+  return 0;
 }
 
-bool only_digit(string s)
-{
+bool only_digit(string s) {
 
-    for (int i = 0; i < strlen(s); i++)
-    {
-        if (!isdigit(s[i]))
-        {
-            return false;
-        }
+  for (int i = 0; i < strlen(s); i++) {
+    if (!isdigit(s[i])) {
+      return false;
     }
-    return true;
+  }
+  return true;
 }
 
-char rotate(char c, int n)
-{
-    if (isalpha(c))
-    {
-        if (isupper(c))
-        {
-            return ((c) - 'A' + n) % 26 + 'A';
-        }
-        else
-        {
-            return ((c) - 'a' + n) % 26 + 'a';
-        }
+char rotate(char c, int n) {
+  if (isalpha(c)) {
+    if (isupper(c)) {
+      return ((c) - 'A' + n) % 26 + 'A';
+    } else {
+      return ((c) - 'a' + n) % 26 + 'a';
     }
-    return c; // Keep non-letters unchanged
+  }
+  return c; // Keep non-letters unchanged
 }
