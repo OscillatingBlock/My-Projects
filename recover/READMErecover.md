@@ -1,4 +1,4 @@
-####JPEG Image Recovery Tool
+######JPEG Image Recovery Tool
 
 This program recovers JPEG images from a memory card formatted for digital cameras. It scans the memory card for lost or deleted JPEG files and attempts to recover them.
 
