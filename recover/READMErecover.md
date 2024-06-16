@@ -13,8 +13,7 @@ Compile the program:
 gcc recover.c -o recover
 ```
 Run the program:
-```
-Bash
+``` Bash
 ./recover memory_card.img
 ```
 Replace memory_card.img with the actual filename of your memory card image file, in this case it is card.raw file here.
